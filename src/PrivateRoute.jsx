@@ -1,10 +1,10 @@
-import {Route, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 import { useAuth } from "./AuthProvider";
 
 export const PrivateRoute = ({children}) => {
-    const isUserlogin = useAuth();
-    console.log(isUserlogin, "isUserLogin")
+    const {isUserlogin} = useAuth();
+
     const navigate = useNavigate();
 
     if(isUserlogin){
